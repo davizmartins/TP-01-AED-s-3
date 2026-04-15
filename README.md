@@ -57,7 +57,7 @@ Seguimos o padrão de camadas para manter a organização do código:
 
 ---
 
-## 📸 6. Capturas de Tela
+## 6. Capturas de Tela
 
 ### Tela de Cadastro
 ![Cadastro do Usuário](img/Cadastro.png)
