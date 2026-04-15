@@ -36,7 +36,7 @@ public class VisaoCurso {
     public void mostrarDetalheCurso(Curso curso) {
         String estado = obterTextoEstado(curso.getEstado());
 
-        System.out.println(" > Início > Meus Cursos > " + curso.getNome().substring(0, Math.min(10, curso.getNome().length())));
+        System.out.println(" > Início > Meus Cursos > " + curso.getNome());
 
         System.out.println(" CÓDIGO......: " + curso.getCodigoCompartilhavel());
         System.out.println(" NOME........: " + curso.getNome());
