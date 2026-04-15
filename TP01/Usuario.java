@@ -1,11 +1,12 @@
 package TP01;
+
 import java.io.IOException;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 
-public class Usuario implements Registro{
+public class Usuario implements Registro {
     public int id;
     public String nome;
     public String email;
@@ -13,12 +14,11 @@ public class Usuario implements Registro{
     public String perguntaSecreta;
     public String hashRespostaSecreta;
 
-
-    public Usuario(){
-        this(-1 , "", "", "", "", "");
+    public Usuario() {
+        this(-1, "", "", "", "", "");
     }
 
-    public Usuario(int id, String n , String e, String hs, String ps, String rs){
+    public Usuario(int id, String n, String e, String hs, String ps, String rs) {
         this.id = id;
         this.nome = n;
         this.email = e;
@@ -33,22 +33,38 @@ public class Usuario implements Registro{
 
     public int getId() {
         return id;
-    }   
+    }
 
-    public String getEmail(){
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
         return email;
     }
 
-    public String toString(){
-        return "\nID........:" + this.id +
-               "\nNome........:" + this.nome +
-               "\nEmail........:" + this.email +
-               "\nHashSenha........:" + this.hashSenha +
-               "\nPergunta Secreta........:" + this.perguntaSecreta +
-               "\nHash Resposta Secreta........:" + this.hashRespostaSecreta;
-     }
+    public String getHashSenha() {
+        return hashSenha;
+    }
 
-     public byte[] toByteArray() throws IOException{
+    public String getPerguntaSecreta() {
+        return perguntaSecreta;
+    }
+
+    public String getHashRespostaSecreta() {
+        return hashRespostaSecreta;
+    }
+
+    public String toString() {
+        return "\nID........:" + this.id +
+                "\nNome........:" + this.nome +
+                "\nEmail........:" + this.email +
+                "\nHashSenha........:" + this.hashSenha +
+                "\nPergunta Secreta........:" + this.perguntaSecreta +
+                "\nHash Resposta Secreta........:" + this.hashRespostaSecreta;
+    }
+
+    public byte[] toByteArray() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
         dos.writeInt(this.id);
@@ -58,8 +74,9 @@ public class Usuario implements Registro{
         dos.writeUTF(this.perguntaSecreta);
         dos.writeUTF(this.hashRespostaSecreta);
         return baos.toByteArray();
-     }
-     public void fromByteArray(byte[] b) throws IOException{
+    }
+
+    public void fromByteArray(byte[] b) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(b);
         DataInputStream dis = new DataInputStream(bais);
         this.id = dis.readInt();
@@ -68,7 +85,6 @@ public class Usuario implements Registro{
         this.hashSenha = dis.readUTF();
         this.perguntaSecreta = dis.readUTF();
         this.hashRespostaSecreta = dis.readUTF();
-    
+
     }
 }
-

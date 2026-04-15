@@ -48,6 +48,22 @@ public class Curso implements Registro {
         this.id = id;
     }
 
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void setEstado(byte estado) {
+        this.estado = estado;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setNome(String n) {
+        this.nome = n;
+    }
+
     @Override
     public int getId() {
         return id;

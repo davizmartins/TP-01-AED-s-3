@@ -1,40 +1,46 @@
 package TP01;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class ParEmailID implements RegistroHashExtensivel<ParEmailID> { 
+public class ParEmailID implements RegistroHashExtensivel<ParEmailID> {
     public String email;
     public int id;
     private final short TAMANHO = 44;
 
-    public ParEmailID(){
+    public ParEmailID() {
         this.email = "";
         this.id = -1;
     }
 
-    public ParEmailID(String e, int id){
-        this.email = e;
-        this.id = id;
+    public ParEmailID(String e, int id) {
+        try {
+            this.email = e;
+            this.id = id;
+            if (e.getBytes().length + 4 > TAMANHO)
+                throw new Exception("Número de caracteres do email maior que o permitido. Os dados serão cortados.");
+        } catch (Exception ec) {
+            ec.printStackTrace();
+        }
     }
 
-
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String e){
+    public void setEmail(String e) {
         this.email = e;
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return hash(this.email);
     }
 
@@ -43,7 +49,7 @@ public class ParEmailID implements RegistroHashExtensivel<ParEmailID> {
     }
 
     public String toString() {
-        return "("+this.email + ";" + this.id+")";
+        return "(" + this.email + ";" + this.id + ")";
     }
 
     public byte[] toByteArray() throws IOException {
