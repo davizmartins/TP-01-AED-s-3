@@ -1,10 +1,11 @@
 # TP-01-AED-s-3
 Este, repositório serve para servir de suporte para nosso projeto 1 de Aeds 3 com o professor Marcos Kutova
 
-Link do Video Da Plataforma no Youtube: [TP01-AEDS 3](https://youtu.be/K8iDMP5FKEc) 
 
 
 # Relatório TP01 - Algoritmos e Estruturas de Dados III
+
+Link do Video Da Plataforma no Youtube: [TP01-AEDS 3](https://youtu.be/K8iDMP5FKEc) 
 
 ## Participantes:
 * **Davi Rafael de Oliveira Gurgel Martins**
