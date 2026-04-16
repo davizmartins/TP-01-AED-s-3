@@ -5,7 +5,7 @@ Este, repositório serve para servir de suporte para nosso projeto 1 de Aeds 3 c
 
 # Relatório TP01 - Algoritmos e Estruturas de Dados III
 
-Link do Video Da Plataforma no Youtube: [TP01-AEDS 3](https://youtu.be/5DhrgSb68VM) 
+Link do Video Da Plataforma no Youtube: [TP01-AEDS 3](https://youtu.be/jeiVte0ehDQ) 
 
 ## Participantes:
 * **Davi Rafael de Oliveira Gurgel Martins**
