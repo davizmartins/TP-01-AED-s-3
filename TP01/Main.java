@@ -1,5 +1,10 @@
 package TP01;
 
+import TP01.models.*;
+import TP01.storage.*;
+import TP01.controllers.*;
+import TP01.views.*;
+
 public class Main {
     public static void main(String[] args) {
         try {
@@ -11,8 +16,16 @@ public class Main {
             ArquivoCurso arquivoCurso = new ArquivoCurso();
             ControleCurso controleCurso = new ControleCurso(visaoCurso, arquivoCurso);
             
+            // Componentes de Inscrição (TP02)
+            VisaoInscricao visaoInscricao = new VisaoInscricao();
+            ArquivoInscricao arquivoInscricao = new ArquivoInscricao();
+            arquivoInscricao.setArquivoUsuario(arquivoUsuario); // Injetar dependência
+            
+            ControleInscricao controleInscricao = new ControleInscricao(visaoInscricao, arquivoInscricao, arquivoCurso, arquivoUsuario);
+            controleCurso.setControleInscricao(controleInscricao); // Injetar dependência
+            
             // Controle de usuários
-            ControleUsuario controleUsuario = new ControleUsuario(visaoUsuario, arquivoUsuario, controleCurso);
+            ControleUsuario controleUsuario = new ControleUsuario(visaoUsuario, arquivoUsuario, controleCurso, controleInscricao);
 
             // Iniciar o sistema
             controleUsuario.mostrarMenu();
